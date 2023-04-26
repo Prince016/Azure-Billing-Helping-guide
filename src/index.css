@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+html,
+body,
+#root,
+.app {
+  height: 100%;
+  width: 100%;
+  font-family: "Rubik", sans-serif;
+}
+
+.form-section{
+  padding: 20px;
+  margin: 20px;
+}
+
+.drop-section {
+  width: 40%;
+  padding: 20px;
+  margin: 10px;
+  /* border: 2px solid black; */
+  box-shadow: 0 0 10px gray;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+}
+
+.drop-content{
+  text-align: center;
+}
