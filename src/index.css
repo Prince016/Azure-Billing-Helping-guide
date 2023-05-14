@@ -9,22 +9,32 @@ body,
   font-family: "Rubik", sans-serif;
 }
 
-.form-section{
+.add-section{
   padding: 20px;
   margin: 20px;
-}
-
-.drop-section {
-  width: 40%;
-  padding: 20px;
-  margin: 10px;
-  /* border: 2px solid black; */
-  box-shadow: 0 0 10px gray;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 60px;
-}
-
-.drop-content{
   text-align: center;
 }
+
+
+
+.add-imageLink{
+ 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input_imageLink{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-right: 6px;
+}
+
+.add-image{
+  /* display: flex;
+  flex-direction: column; */
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+

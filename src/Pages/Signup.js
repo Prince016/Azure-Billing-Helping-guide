@@ -6,7 +6,7 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 // import Link from '@mui/material/Link';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
@@ -19,6 +19,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
 function Copyright(props) {
+
+  
+
     return (
       <Typography variant="body2" color="text.secondary" align="center" {...props}>
         {'Copyright © '}
@@ -33,18 +36,53 @@ function Copyright(props) {
 
   const theme = createTheme();
 
+ 
+  // const SignupUser =()=>{
+  //    const response = fetch("http://localhost:8080/api/v1/signup",{
+  //     method:POST
+  //    })
+  // }
+
 
 const Signup = () => {
 
+  const navigate = useNavigate();
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async(event) => {
         event.preventDefault();
+
+
+
         const data = new FormData(event.currentTarget);
         console.log({
           email: data.get('email'),
           password: data.get('password'),
         });
+         
+        const response = await fetch(`http://localhost:8080/api/v1/signup`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: data.get('email'),
+            password: data.get('password'),
+          }),
+        });
+        const json = await response.json();
+         
+        console.log(json);
+       
+         if(json){
+          // localStorage.setItem("userEmail",data.get('email'))
+          // localStorage.setItem("authToken",json.authToken)
+          navigate("/")
+         }
       };
+
+
+
+    
 
 
 
@@ -112,8 +150,9 @@ const Signup = () => {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+
             >
-              Sign In
+              Sign Up
             </Button>
             <Grid container>
               <Grid item xs>
