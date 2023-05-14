@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { ArrowUpTrayIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { Button } from "@mui/material";
+import Navbar from "../components/Navbar";
 
 const Add = () => {
   const [val, setVal] = useState("");
@@ -13,8 +14,9 @@ const Add = () => {
   };
 
   const Uploadfiles = async () => {
+    const id= localStorage.getItem("userId")
     const response = await fetch(
-      `http://localhost:8080/api/v1/form-recognizer?userId=1`,
+      `http://localhost:8080/api/v1/form-recognizer?userId=${id}`,
       {
         method: "POST",
         headers: {
@@ -24,8 +26,10 @@ const Add = () => {
       }
     );
     const json = await response.json();
-
+   
+    alert("Image Uploaded Successfully 👍")
     console.log(json);
+
   };
 
   return (

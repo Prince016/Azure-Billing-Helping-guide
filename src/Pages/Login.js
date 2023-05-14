@@ -84,10 +84,12 @@ const Login = () => {
     const json = await response.json();
 
     console.log(json);
-    console.log("tod check test--------------", json.success);
+    console.log("tod check test--------------", json.id);
     if (json.email == data.get("email")) {
       navigate("/add");
       localStorage.setItem("userEmail", data.get("email"));
+      localStorage.setItem("userId", json.id);
+
     } else {
       alert("Enter Valid Credentials");
       // localStorage.setItem("authToken",json.authToken)
