@@ -55,7 +55,7 @@ const Show = () => {
     date1.map((item, i) => {
       const d = item.slice(0, 10);
       const splitscreen = d.split("-");
-      console.log(splitscreen);
+      // console.log(splitscreen);
       const s =
         splitscreen[0] +
         "-" +
@@ -64,7 +64,7 @@ const Show = () => {
         splitscreen[1] +
         "T00:00:00Z";
 
-      console.log("this is the data we send ----------------------> ", s);
+      // console.log("this is the data we send ----------------------> ", s);
       datefinal.push(s);
 
     });
@@ -83,7 +83,7 @@ const Show = () => {
     };
 
     // console.log("final series output -------------> ", series);
-    console.log("final series output -------------> ", finalData);
+    // console.log("final series output -------------> ", finalData);
 
     // --------------------> Send fetch api for the detection anaomaly <-------------------
 
@@ -99,7 +99,7 @@ const Show = () => {
     const detectionOutput = await response.json();
     setFinaldetect(detectionOutput);
 
-    console.log(detectionOutput);
+    // console.log(detectionOutput);
     // return json;
   };
 
